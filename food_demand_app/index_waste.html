@@ -1,0 +1,359 @@
+
+<html>
+	<head>
+		<title>Food demand projections for the 21st century</title>
+      <meta description="Our food demand is the major driver of human land-use and land-use change. This is an interactive web-tool to explore scenarios for future food demand.">  
+      <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+    	<meta name="apple-mobile-web-app-capable" content="yes">
+        
+    	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+    	<meta name="apple-mobile-web-app-capable" content="yes">
+    	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<meta name="author" content="kai.schefferski@btk-fh.de and bodirsky@pik-potsdam.de">
+        
+        <link href="lib/css/default_eng.css" rel="stylesheet" type="text/css">
+        <script	src="lib/js/jquery.min.js"></script>
+		<script src="lib/js/jqtouch.js" type="application/x-javascript" charset="utf-8"></script>
+        <script	src="lib/js/main_eng.js"></script>
+	</head>
+    
+    <body>                   
+    	<div id="page1"><!-- Seite 1 -->
+        	
+        	<div style="height:15px"></div>
+            
+            <!-- Header -->
+        	<div style="height:125px">
+        		<div style="float:left; width:40px">&nbsp;</div>
+            	<div style="float:left; width:180px"><img src="lib/images/logo.png" /></div>
+            	<div style="float:left; width:180px;margin-top:15px"><img style="cursor:help" src="lib/images/description_text.png" /></div>
+            	<div style="float:right; width:40px">&nbsp;</div>
+            	
+                <!-- Menü: Szenarienwahl -->
+              <div style="float:right; width:420px">
+            		  <div align="center"><img style="margin-bottom: 3px; margin-left: 6px" src="lib/images/scenario_selection.png" /></div>
+            		  <div id="btn_szenario_historic"><a style="cursor:pointer; margin-left: 17px">&nbsp;</a></div>
+            		  <div id="btn_szenario_b1"><a style="cursor:pointer; margin-bottom: 3px; margin-left: 3px;margin-right:-10px">&nbsp;</a></div>
+                	<div id="btn_szenario_a1"><a style="cursor:pointer; margin-bottom: 3px; margin-left: 0px">&nbsp;</a></div>
+                	<div id="btn_szenario_b2"><a style="cursor:pointer; margin-left: 3px;margin-right:-10px">&nbsp;</a></div>
+                	<div id="btn_szenario_a2"><a style="cursor:pointer; margin-left: 0px">&nbsp;</a></div> 
+            	</div>
+            
+        	</div>
+        
+        	<div style="height:25px">&nbsp;</div>
+            <div  style="cursor:pointer; float:left; width:40px;"> 
+                 <img id="btn_left" src="lib/images/arrow_left.png" />
+            </div>     	
+            <div  style="cursor:pointer; float:right;"> 
+                 <img id="btn_right" src="lib/images/arrow_right.png" />
+            </div>         	
+            <!-- Menü: Regionenwahl -->
+          
+        	<div style="height:45px; width:1024px;">
+        		<div style="float:left; width:40px">&nbsp;</div>
+        		<div id="navi">
+                	<a id="btn_afr">SSH. AFRICA</a> | <a id="btn_cpa">CENTR. PLANNED ASIA</a> | <a id="btn_eur">EUROPE</a> | <a id="btn_fsu">F. SOVIET UNION</a> | <a id="btn_lam">LATIN AMERICA</a> | <a id="btn_mea">MDL. EAST & N. AFRICA</a> | <a id="btn_nam">NORTH AMERICA</a> | <a  id="btn_pao">PACIFIC OECD</a> | <a id="btn_pas">PACIFIC ASIA</a> | <a id="btn_sas" style="margin-right:0px">SOUTH ASIA</a>
+            </div>   
+        		<div style="float:right; width:40px">&nbsp;</div>
+        	</div>
+            <!-- Menü: Regionenwahl Ende -->   
+
+
+            <!-- Regionen + Navi -->
+        	<div id="content" style="width:945px;">
+            
+              
+        		
+                <!-- Container für Regionen -->
+       			<div id="regionSlider" style="overflow:hidden; width:945px; height: 245px">
+                
+        			<div style="position:relative; left: 0px; width: 3410px" class="block">
+                    	
+                        <!-- Regionen -->
+
+        				
+                        <div style="float:left; width:56px; height:245px"></div>
+                    
+        				<a id="AFR" style="text-decoration:none; color: #282828;">
+                        	<div style="float:left; width:145px; height:245px;">
+                        		<img src="lib/images/AFR.png" />
+                  			</div>
+                            <div style="float:left; width:141px; height:245px">
+                                <div><img src="lib/images/header_population.png" /></div>
+                                <div id="bev_zahl"><div id="bev_afr">Bevölkerung</div></div>
+                                <div><img src="lib/images/header_total_demand.png" /></div>
+                                <div id="bev_zahl"><div id="kal_afr">Kalorien</div>
+                                </div><img src="lib/images/header_per_capita_demand.png" />
+                                <div style="margin-top: 6px"><div id="lvs_afr">Kühe</div></div>
+                            </div>
+                       </a>
+
+
+                      <div style="float:left; width:56px; height:245px"></div>
+                      
+                      <a id="CPA" style="text-decoration:none; color: #282828;">
+            			<div style="float:left; width:145px; height:245px">
+                        	<img src="lib/images/CPA.png" />
+                        </div>
+        				<div style="float:left; width:141px; height:245px">
+                        	<div><img src="lib/images/header_population.png" /></div>
+                            <div id="bev_zahl"><div id="bev_cpa">Bevölkerung</div></div>
+                            <div><img src="lib/images/header_total_demand.png" /></div>
+                            <div id="bev_zahl"><div id="kal_cpa"></div></div>
+                            <img src="lib/images/header_per_capita_demand.png" />
+                            <div style="margin-top: 6px"><div id="lvs_cpa">Kühe</div></div>
+                        </div>
+                       </a>
+                                          
+        				
+                        <div style="float:left; width:56px; height:245px"></div>
+                    
+                      <a id="EUR" style="text-decoration:none; color: #282828;">
+        				<div style="float:left; width:145px; height:245px">
+                        	<img src="lib/images/EUR.png" />
+                        </div>
+        				<div style="float:left; width:141px; height:245px">
+                        	<div><img src="lib/images/header_population.png" /></div>
+                            <div id="bev_zahl"><div id="bev_eur">Bevölkerung</div></div>
+                            <div><img src="lib/images/header_total_demand.png" /></div>
+                            <div id="bev_zahl"><div id="kal_eur"></div></div>
+                            <img src="lib/images/header_per_capita_demand.png" />
+                            <div style="margin-top: 6px"><div id="lvs_eur">Kühe</div></div>
+                        </div>
+                       </a>                       
+            			                       
+            			
+                        <div style="float:left; width:56px; height:245px"></div>
+                    
+
+                      <a id="FSU" style="text-decoration:none; color: #282828;">
+            			<div style="float:left; width:145px; height:245px">
+                        	<img src="lib/images/FSU.png" />
+                        </div>
+        				<div style="float:left; width:141px; height:245px">
+                        	<div><img src="lib/images/header_population.png" /></div>
+                            <div id="bev_zahl"><div id="bev_fsu">Bevölkerung</div>
+                            </div><div><img src="lib/images/header_total_demand.png" /></div>
+                            <div id="bev_zahl"><div id="kal_fsu"></div></div>
+                            <img src="lib/images/header_per_capita_demand.png" />
+                            <div style="margin-top: 6px"><div id="lvs_fsu">Kühe</div></div>
+                        </div>
+                      </a>
+                        
+            			<div style="float:left; width:56px; height:245px"></div>
+                    
+                      <a id="LAM" style="text-decoration:none; color: #282828;">
+            			<div style="float:left; width:145px; height:245px">
+                        	<img src="lib/images/LAM.png" />
+                        </div>
+        				<div style="float:left; width:141px; height:245px">
+                        	<div><img src="lib/images/header_population.png" /></div>
+                            <div id="bev_zahl"><div id="bev_lam">Bevölkerung</div></div>
+                            <div><img src="lib/images/header_total_demand.png" /></div>
+                            <div id="bev_zahl"><div id="kal_lam"></div></div>
+                            <img src="lib/images/header_per_capita_demand.png" />
+                            <div style="margin-top: 6px"><div id="lvs_lam">Kühe</div></div>
+                        </div>
+                      </a>
+                      
+                <div style="float:left; width:56px; height:245px"></div>                      
+                      
+            			<a id="MEA" style="text-decoration:none; color: #282828;"><div style="float:left; width:145px; height:245px;">
+                        	<img src="lib/images/MEA.png" />
+                        </div>
+        				<div style="float:left; width:141px; height:245px">
+                        	<div><img src="lib/images/header_population.png" /></div>
+                            <div id="bev_zahl"><div id="bev_mea">Bevölkerung</div></div>
+                            <div><img src="lib/images/header_total_demand.png" /></div>
+                            <div id="bev_zahl"><div id="kal_mea">Kalorien</div></div>
+                            <img src="lib/images/header_per_capita_demand.png" />
+                            <div style="margin-top: 6px"><div id="lvs_mea">Kühe</div></div>
+                         </div>
+                         </a>                      
+            			
+                        
+                    
+                      <a id="NAM" style="text-decoration:none; color: #282828;">
+            			<div style="float:left; width:165px; height:245px">
+                        	<img src="lib/images/NAM.png" />
+                        </div>
+        				<div style="float:left; width:141px; height:245px">
+                        	<div><img src="lib/images/header_population.png" /></div>
+                            <div id="bev_zahl"><div id="bev_nam">Bevölkerung</div></div>
+                            <div><img src="lib/images/header_total_demand.png" /></div>
+                            <div id="bev_zahl"><div id="kal_nam"></div></div>
+                            <img src="lib/images/header_per_capita_demand.png" />
+                            <div style="margin-top: 6px"><div id="lvs_nam">Kühe</div></div>
+                        </div>
+                      </a>
+            			
+                        <div style="float:left; width:56px; height:245px"></div>
+                    
+                      <a id="PAO" style="text-decoration:none; color: #282828;">
+            			<div style="float:left; width:145px; height:245px">
+                        	<img src="lib/images/PAO.png" />
+                        </div>
+        				<div style="float:left; width:141px; height:245px">
+                        	<div><img src="lib/images/header_population.png" /></div>
+                            <div id="bev_zahl"><div id="bev_pao">Bevölkerung</div></div>
+                            <div><img src="lib/images/header_total_demand.png" /></div>
+                            <div id="bev_zahl"><div id="kal_pao"></div></div>
+                            <img src="lib/images/header_per_capita_demand.png" />
+                            <div style="margin-top: 6px"><div id="lvs_pao">Kühe</div></div>
+                        </div>
+                      </a>
+            			
+                        <div style="float:left; width:56px; height:245px"></div>
+                    
+                      <a id="PAS" style="text-decoration:none; color: #282828;">
+            			<div style="float:left; width:145px; height:245px">
+                        	<img src="lib/images/PAS.png" />
+                        </div>
+        				<div style="float:left; width:141px; height:245px">
+                        	<div><img src="lib/images/header_population.png" /></div>
+                            <div id="bev_zahl"><div id="bev_pas">Bevölkerung</div></div>
+                            <div><img src="lib/images/header_total_demand.png" /></div>
+                            <div id="bev_zahl"><div id="kal_pas"></div></div>
+                            <img src="lib/images/header_per_capita_demand.png" />
+                            <div style="margin-top: 6px"><div id="lvs_pas">Kühe</div></div>
+                        </div>
+                      </a>
+            			
+                        <div style="float:left; width:56px; height:245px"></div>
+                    
+                      <a id="SAS" style="text-decoration:none; color: #282828;">
+            			<div style="float:left; width:145px; height:245px">
+                        	<img src="lib/images/SAS.png" />
+                        </div>
+        				<div style="float:left; width:141px; height:245px">
+                        <div><img src="lib/images/header_population.png" /></div>
+                        	<div id="bev_zahl"><div id="bev_sas">Bevölkerung</div></div>
+                            <div><img src="lib/images/header_total_demand.png" /></div>
+                            <div id="bev_zahl"><div id="kal_sas"></div></div>
+                            <img src="lib/images/header_per_capita_demand.png" />
+                            <div style="margin-top: 6px"><div id="lvs_sas">Kühe</div></div> 
+
+                        </div>
+                      </a>
+                        <!-- Regionen Ende -->
+                        
+        			</div>
+        
+            </div>
+        		<!-- Container für Regionen Ende -->
+                
+	    
+        	</div>
+            <!-- Regionen + Navi Ende -->
+            
+            <!-- Legende -->   
+          <div style="float:left; width:010px">&nbsp;</div>
+        	<div style="float:left"><img src="lib/images/description_long_flach.png" /></div>
+
+        	<div id="yearfont"><div id="year_number">2000</div></div>
+          <div style="height:50px">&nbsp; </div>   
+          </div>          	
+
+            
+    	</div><!-- Seite 1 Ende -->
+    	
+    	
+   <!-- Slider: Zeit -->
+      <div id="year">
+        	<div style="padding-top: 24px">
+        		<div style="float:left; width:40px">&nbsp;</div> 
+        		<div>
+					     <div id="sliderRange">
+					     <div id="sliderButton"></div></div> 
+            </div>  
+          </div> 
+      </div>
+        <!-- Slider: Zeit Ende-->  
+ 
+        
+      <div id="page2"><!-- Seite 2 -->
+        	
+
+          <div id="btn_back"><a style="cursor:pointer; float:left; margin-top: 30px; margin-right: 60px"><img src="lib/images/button_overview.png" /></a></div>
+
+        	
+            <!-- Regionen + Navi -->
+        	<div id="content" style="width:1024px;">
+            
+                <!-- Container für Regionen -->
+                <div style="position:absolute; left:70px; top:250px">
+                    <img class="detailImg" src="lib/images/AFR.png" />
+                </div>
+                                
+                <div id="page2Back" style="position:absolute; left:270px; top: 100px; width:570px; height:460px; background-image:url(lib/images/bg_detail_regio_small.png); background-repeat:no-repeat">
+                
+                	<div style="float:left; margin-top:80px; width:280px; height:150px">
+                    	<div style="float:left; width:145px; height:184px">
+                        	<div><img src="lib/images/header_population.png" /></div>
+                            <div id="bev_zahl"><div class="bev_mon1">Bevölkerung1</div></div>
+                            <div><img src="lib/images/header_total_demand.png" /></div>
+                            <div id="bev_zahl"><div class="kal_mon1">Kalorien</div></div>
+                        </div>
+        				        <div style="float:left; width:131px; height:184px">
+                            <img src="lib/images/header_per_capita_demand.png" />
+                            <div style="margin-top: 6px"><div class="fett_mon1">Kühe</div></div>
+                        </div>
+                    </div>
+                    
+                    <div style="float:left; margin-top:80px; margin-left:5px; width:280px; height:150px">
+                    	<div style="float:left; width:145px; height:184px">
+                        	<div><img src="lib/images/header_population.png" /></div>
+                            <div id="bev_zahl"><div class="bev_mon2">Bevölkerung2</div></div>
+                            <div><img src="lib/images/header_total_demand.png" /></div>
+                            <div id="bev_zahl"><div class="kal_mon2">Kalorien</div></div>
+                        </div>
+        				        <div style="float:left; width:131px; height:184px">
+                            <img src="lib/images/header_per_capita_demand.png" />
+                            <div style="margin-top: 6px"><div class="fett_mon2">Kühe</div></div>
+                        </div>
+                   </div>
+
+                   
+                    
+                  <div style="float:left; margin-top:21px; width:280px; height:184px">
+                    	<div style="float:left; width:145px; height:184px">
+                        	<div><img src="lib/images/header_population.png" /></div>
+                            <div id="bev_zahl"><div class="bev_mon3">Bevölkerung3</div></div>
+                            <div><img src="lib/images/header_total_demand.png" /></div>
+                            <div id="bev_zahl"><div class="kal_mon3">Kalorien</div></div>
+                        </div>
+        				        <div style="float:left; width:131px; height:184px">
+                            <img src="lib/images/header_per_capita_demand.png" />
+                            <div style="margin-top: 6px"><div class="fett_mon3">Kühe</div></div>
+                        </div>
+                  </div>
+                  
+                  <div style="float:left; margin-top:21px; margin-left:5px; width:280px; height:184px">
+                    	<div style="float:left; width:145px; height:184px">
+                        	<div><img src="lib/images/header_population.png" /></div>
+                            <div id="bev_zahl"><div class="bev_mon4">Bevölkerung4</div></div>
+                            <div><img src="lib/images/header_total_demand.png" /></div>
+                            <div id="bev_zahl"><div class="kal_mon4">Kalorien</div></div>
+                        </div>
+        				        <div style="float:left; width:131px; height:184px">
+                            <img src="lib/images/header_per_capita_demand.png" />
+                            <div style="margin-top: 6px"><div class="fett_mon4">Kühe</div></div>
+                        </div>
+                  </div>
+                	
+                    </div>
+                </div>
+        		<!-- Container für Regionen Ende -->
+                
+        	</div>            
+           
+    	</div><!-- Seite 2 Ende -->
+                      
+                      
+  
+        
+                              
+    </body>
+</html>
